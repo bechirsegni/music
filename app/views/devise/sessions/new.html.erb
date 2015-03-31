@@ -1,26 +1,53 @@
-<h2>Log in</h2>
-
+<section id="content" class="m-t-lg wrapper-md animated fadeInUp">
+  <div class="container aside-xl">
+    <a class="navbar-brand block" href="index-2.html">
+      <span class="h1 font-bold">Musik</span>
+    </a>
+    <section class="m-b-lg">
+      <header class="wrapper text-center">
+        <strong>Sign in to get in touch</strong>
+      </header>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <div class="form-group">
+    <%= f.email_field :email, autofocus: true , class:'form-control rounded input-lg text-center no-border',placeholder:'Email'%>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <div class="form-group">
+    <%= f.password_field :password, autocomplete: "off" ,placeholder:'Password',class:'form-control rounded input-lg text-center no-border'%>
   </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div class="field">
+  <div class="form-group">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in" ,class:'btn btn-lg btn-warning lt b-white b-2x btn-block btn-rounded'%>
   </div>
 <% end %>
+      <div class="text-center m-t m-b">
+        <a href="#">
+          <small>Forgot password?</small>
+        </a>
+      </div>
+      <div class="line line-dashed"></div>
+      <p class="text-muted text-center">
+        <small>Do not have an account?</small>
+      </p>
+      <a href="signup.html" class="btn btn-lg btn-info btn-block rounded">Create an account</a>
 
 <%= render "devise/shared/links" %>
+    </section>
+  </div>
+</section>
+<!-- footer -->
+<footer id="footer">
+  <div class="text-center padder">
+    <p>
+      <small>Web app framework base on Bootstrap
+        <br>&copy; 2014
+      </small>
+    </p>
+  </div>
+</footer>

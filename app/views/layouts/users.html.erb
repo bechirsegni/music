@@ -5,19 +5,11 @@
   <title>Music</title>
   <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag  'users', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="">
-<section class="vbox">
-  <%= render 'home/common/head'%>
-  <section>
-    <section class="hbox stretch">
-      <%= render 'home/common/nav'%>
-<%= yield %>
-    </section>
-  </section>
-</section>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<body class="bg-info" >
+      <%= yield %>
+<%= javascript_include_tag 'users', 'data-turbolinks-track' => true %>
 </body>
 </html>
