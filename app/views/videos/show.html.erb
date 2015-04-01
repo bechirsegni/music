@@ -74,10 +74,10 @@
                   <div class="line b-b"></div>
                   <div class="text-muted">
                     <i class="fa fa-user icon-muted"></i> by
-                    <a href="#" class="m-r-sm"><%= User.name%></a>
+                    <a href="#" class="m-r-sm"><%=@video.user.name%></a>
                     <i class="fa fa-clock-o icon-muted"></i> <%="#{time_ago_in_words(@video.created_at)} ago"%>
                     <a href="#" class="m-l-sm">
-                      <i class="fa fa-comment-o icon-muted"></i> 3 comments
+                      <i class="fa fa-comment-o icon-muted"></i> <%= @video.comments.count %> Comments
                     </a>
                   </div>
                 </div>

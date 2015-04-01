@@ -4,12 +4,10 @@ class VideosController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-  @user = User.find(params[:id])
-  @videos = Video.all
+    @videos = Video.all
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def new
