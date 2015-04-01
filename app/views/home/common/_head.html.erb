@@ -75,8 +75,12 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
                                                     <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                                                        <img src="images/a0.png" alt="...">
-                                                        </span> John.Smith
+                                                                <%= image_tag 'a0.png'%>
+                                                        </span> <%if user_signed_in? %>                                              </span>
+              <%= current_user.name%>
+          <%else%>
+              <%= "Guest" %>
+          <%end%>
           <b class="caret"></b>
         </a>
         <ul class="dropdown-menu animated fadeInRight">
@@ -97,7 +101,7 @@
           </li>
           <li class="divider"></li>
           <li>
-            <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
+            <%=link_to 'Logout', logout_path %>
           </li>
         </ul>
       </li>
