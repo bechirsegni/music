@@ -17,3 +17,4 @@ group :development, :test do
 end
 gem 'devise', '~> 3.4.1'
 gem 'ie_conditional_tag', '~> 0.6.0'
+gem 'paperclip', '~> 4.2.1'

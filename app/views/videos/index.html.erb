@@ -1,40 +1,60 @@
-<%- model_class = Video -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th><%= model_class.human_attribute_name(:title) %></th>
-    <th><%= model_class.human_attribute_name(:description) %></th>
-    <th><%= model_class.human_attribute_name(:video_id) %></th>
-
-    <th><%=t '.actions', :default => t("helpers.actions") %></th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @videos.each do |video| %>
-      <tr>
-        <td><%= video.title %></td>
-        <td><%= video.description %></td>
-        <td><%= video.video_id %></td>
-        <td><%=l video.created_at, format: :short %></td>
-        <td>
-          <%= link_to video_path(video), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
-              <%= 'info-sign' %>
-          <%- end -%>
-          <%= link_to edit_video_path(video), :class => 'btn btn-xs', :title => "#{ t('.edit', :default => t('helpers.links.edit')) }" do %>
-              <%= 'pencil' %>
-          <%- end -%>
-          <%= link_to video_path(video), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
-              <%=  'remove' %>
-          <%- end -%>
-        </td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_video_path,
-            :class => 'btn btn-primary' %>
+<section id="content">
+  <section class="vbox" id="bjax-el">
+    <section class="scrollable padder-lg">
+      <h2 class="font-thin m-b">Video</h2>
+      <div class="row row-sm">
+        <% @videos.each do |video| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="item">
+            <div class="pos-rlt">
+              <div class="item-overlay opacity r r-2x bg-black">
+                <div class="center text-center m-t-n">
+                  <a href="#">
+                    <i class="fa fa-play-circle i-2x"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="top">
+                <span class="badge bg-dark m-l-sm m-t-sm">03:20</span>
+              </div>
+              <a href="#">
+                <%= image_tag video.cover_image.url(:medium),class:'r r-2x img-full'%>
+              </a>
+            </div>
+            <div class="padder-v">
+              <a href="#" class="text-ellipsis"><%= video.title %></a>
+              <a href="#" class="text-ellipsis text-xs text-muted"><%=current_user.name%></a>
+            </div>
+          </div>
+        </div>
+        <%end%>
+      </div>
+      <h3 class="font-thin m-b">Video List</h3>
+      <div class="row row-sm">
+        <% @videos.each do |video| %>
+      <div class="col-xs-6 col-sm-4 col-md-3">
+          <div class="item">
+            <div class="pos-rlt">
+              <div class="item-overlay opacity r r-2x bg-black">
+                <div class="center text-center m-t-n">
+                  <a href="#">
+                    <i class="fa fa-play-circle i-2x"></i>
+                  </a>
+                </div>
+              </div>
+              <a href="#l">
+                <%= image_tag video.cover_image.url(:medium),class:'r r-2x img-full'%>
+              </a>
+            </div>
+            <div class="padder-v">
+              <a href="#" class="text-ellipsis"><%= video.title %></a>
+              <a href="#" class="text-ellipsis text-xs text-muted"><%=current_user.name%></a>
+            </div>
+          </div>
+        </div>
+        <%end%>
+      </div>
+    </section>
+  </section>
+  <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+</section>

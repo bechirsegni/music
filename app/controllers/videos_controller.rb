@@ -4,11 +4,12 @@ class VideosController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
+  @user = User.find(params[:id])
   @videos = Video.all
   end
 
   def show
-
+    @user = User.find(params[:id])
   end
 
   def new
@@ -48,7 +49,7 @@ class VideosController < ApplicationController
   end
 
   def video_params
-    params.require(:video).permit(:title, :description, :video_id)
+    params.require(:video).permit(:title, :description, :video_link,:cover_image)
   end
 
   def correct_user
