@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   end
 
   resources :profiles
-  resources :songs
+  resources :songs do
+    resources :scomments
+  end
 
 end
