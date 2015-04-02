@@ -12,6 +12,13 @@
       </div>
     </div>
     <div class="form-group">
+      <%= f.label :category_id , :class => 'control-label col-md-2'%>
+      <div class="col-md-10">
+        <%= f.collection_select :category_id,Category.all,:id, :name,{promt: "Choose a category"},class:'selectpicker' %>
+      </div>
+    </div>
+    </br>
+    <div class="form-group">
       <%= f.label :mp3, :class => 'control-label col-md-2' %>
       <div class="col-md-10">
         <%= f.file_field :mp3 %>

@@ -4,7 +4,12 @@ class SongsController < ApplicationController
   before_filter :correct_user, only: [:edit, :update, :destroy]
 
   def index
+    if params[:category].blank?
     @songs = Song.all
+    else
+    @category_id = Category.find_by(name: params[:category]).id
+      @songs = Song.where(category_id: @category_id ).order("created_at DESC")
+    end
   end
 
   def show
@@ -29,9 +34,11 @@ class SongsController < ApplicationController
   end
 
   def update
-    @song.update
-    redirect_to song_path
-
+    if @song.update(song_params)
+    redirect_to song_path ,notice: 'song updated succesfully'
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -47,7 +54,7 @@ class SongsController < ApplicationController
   end
 
   def song_params
-    params.require(:song).permit(:title, :description, :mp3, :image)
+    params.require(:song).permit(:title, :description, :mp3, :image, :category_id)
   end
 
   def correct_user
