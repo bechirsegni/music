@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     post 'login', :to => 'devise/sessions#new'
     get 'register', :to => 'devise/registrations#new'
     get 'logout', to: 'devise/sessions#destroy'
-
   end
+
   resources :videos do
     resources :comments
   end

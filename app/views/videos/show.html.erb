@@ -4,67 +4,9 @@
           <div class="row">
             <div class="col-sm-8">
               <div class="panel">
+
                 <!-- video player -->
-                <div id="jp_container_1">
-                  <div class="jp-type-single pos-rlt">
-                    <div id="jplayer_1" class="jp-jplayer jp-video">
-                    </div>
-                    <div class="jp-gui">
-                      <div class="jp-video-play">
-                        <a class="fa fa-5x text-white fa-play-circle"></a>
-                      </div>
-                      <div class="jp-interface bg-info padder">
-                        <div class="jp-controls">
-                          <div>
-                            <a class="jp-play">
-                              <i class="icon-control-play i-2x"></i>
-                            </a>
-                            <a class="jp-pause hid">
-                              <i class="icon-control-pause i-2x"></i>
-                            </a>
-                          </div>
-                          <div class="jp-progress">
-                            <div class="jp-seek-bar dker">
-                              <div class="jp-play-bar dk"></div>
-                              <div class="jp-title text-lt">
-                                <ul>
-                                  <li></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="hidden-xs hidden-sm jp-current-time text-xs text-muted"></div>
-                          <div class="hidden-xs hidden-sm jp-duration text-xs text-muted"></div>
-                          <div class="hidden-xs hidden-sm">
-                            <a class="jp-mute" title="mute">
-                              <i class="icon-volume-2"></i>
-                            </a>
-                            <a class="jp-unmute hid" title="unmute">
-                              <i class="icon-volume-off"></i>
-                            </a>
-                          </div>
-                          <div class="hidden-xs hidden-sm jp-volume">
-                            <div class="jp-volume-bar dk">
-                              <div class="jp-volume-bar-value lter"></div>
-                            </div>
-                          </div>
-                          <div>
-                            <a class="jp-full-screen" title="full screen">
-                              <i class="fa fa-expand"></i>
-                            </a>
-                            <a class="jp-restore-screen" title="restore screen">
-                              <i class="fa fa-compress text-lt"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="jp-no-solution hide">
-                      <span>Update Required</span> To play the media you will need to either update your browser to a recent version or update your
-                      <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
-                    </div>
-                  </div>
-                </div>
+                <%= render 'videos/iframe'%>
                 <!-- / video player -->
                 <div class="wrapper-lg">
                   <h2 class="m-t-none text-black"><%= @video.title %></h2>

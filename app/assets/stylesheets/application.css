@@ -11,5 +11,6 @@
  * file per style scope.
  *= require jplayer.flat
  *= require app.v1
+ *= require styles
  *= require_self
  */

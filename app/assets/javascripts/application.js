@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require id3-minimized
+//= require wavesurfer.min
+//= require reader
 //= require app.v1.js
 //= require app.plugin
-//= require jPlayer/jquery.jplayer.min
-//= require jPlayer/add-on/jplayer.playlist.min
-//= require jPlayer/demo
 //= require turbolinks
