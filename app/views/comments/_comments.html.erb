@@ -1,19 +1,19 @@
 <h4 class="m-t-lg m-b"><%= @video.comments.count %> Comments</h4>
 <section class="comment-list block">
   <% @video.comments.each do |comment| %>
-<article id="comment-id-1" class="comment-item">
-    <a class="pull-left thumb-sm">
-      <%= image_tag 'a10.png', class:'img-circle'%>
-    </a>
-    <section class="comment-body m-b">
-      <header>
-        <a href="#">
-          <strong><%=comment.user.name%></strong>
+      <article id="comment-id-1" class="comment-item">
+        <a class="pull-left thumb-sm">
+          <%= image_tag 'a10.png', class:'img-circle'%>
         </a>
-        <span class="text-muted text-xs block m-t-xs"><%="#{time_ago_in_words(comment.created_at)} ago"%></span>
-      </header>
-      <div class="m-t-sm"><%=comment.body%></div>
-    </section>
+        <section class="comment-body m-b">
+          <header>
+            <a href="#">
+              <strong><%=comment.user.name%></strong>
+            </a>
+            <span class="text-muted text-xs block m-t-xs"><%="#{time_ago_in_words(comment.created_at)} ago"%></span>
+          </header>
+          <div class="m-t-sm"><%=comment.body%></div>
+        </section>
       </article>
   <%end%>
 </section>

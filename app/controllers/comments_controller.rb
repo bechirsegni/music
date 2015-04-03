@@ -4,13 +4,13 @@ class CommentsController < ApplicationController
   before_action :correct_user, only: [:destroy]
 
 
-    def create
-      @comment = @video.comments.build(comment_params)
-      @comment.user = current_user
-      if @comment.save
+  def create
+    @comment = @video.comments.build(comment_params)
+    @comment.user = current_user
+    if @comment.save
       redirect_to video_path(@video)
-      end
     end
+  end
 
 
   def destroy

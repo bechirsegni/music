@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402191101) do
+ActiveRecord::Schema.define(version: 20150403171149) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20150402191101) do
   create_table "comments", force: :cascade do |t|
     t.text     "body",       limit: 65535
     t.integer  "user_id",    limit: 4
+    t.integer  "video_id",   limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.integer  "video_id",   limit: 4
   end
 
   create_table "profiles", force: :cascade do |t|

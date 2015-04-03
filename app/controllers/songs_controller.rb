@@ -5,9 +5,9 @@ class SongsController < ApplicationController
 
   def index
     if params[:category].blank?
-    @songs = Song.all
+      @songs = Song.all
     else
-    @category_id = Category.find_by(name: params[:category]).id
+      @category_id = Category.find_by(name: params[:category]).id
       @songs = Song.where(category_id: @category_id ).order("created_at DESC")
     end
   end
@@ -35,7 +35,7 @@ class SongsController < ApplicationController
 
   def update
     if @song.update(song_params)
-    redirect_to song_path ,notice: 'song updated succesfully'
+      redirect_to song_path ,notice: 'song updated succesfully'
     else
       render :edit
     end
