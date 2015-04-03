@@ -10,14 +10,16 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
 gem 'devise', '~> 3.4.1'
 gem 'ie_conditional_tag', '~> 0.6.0'
-gem 'paperclip', '~> 4.2.1'
 gem 'figaro', '~> 1.1.0'
 gem 'carrierwave', '~> 0.10.0'
+gem 'rmagick', '~> 2.14.0'
 gem 'fog', '~> 1.28.0'

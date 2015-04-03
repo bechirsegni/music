@@ -18,7 +18,7 @@
                 <span class="badge bg-dark m-l-sm m-t-sm">03:20</span>
               </div>
               <a href="#">
-                <%= image_tag video.cover_image.url.to_s,class:'r r-2x img-full'%>
+                <%= image_tag video.cover_image.url(:thumb).to_s,class:'r r-2x img-full'%>
               </a>
             </div>
             <div class="padder-v">
@@ -43,7 +43,7 @@
                 </div>
               </div>
               <a href="#l">
-                <%= image_tag video.cover_image.url.to_s,class:'r r-2x img-full'%>
+                <%= image_tag video.cover_image.url(:thumb).to_s,class:'r r-2x img-full'%>
               </a>
             </div>
             <div class="padder-v">
