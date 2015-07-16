@@ -1,0 +1,10 @@
+Rails.application.routes.draw do
+  root 'home#index'
+
+   devise_do :users
+  resources :videos do
+    resources :comments
+  end
+
+
+end

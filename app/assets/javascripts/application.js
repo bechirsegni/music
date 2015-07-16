@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require id3-minimized
+//= require wavesurfer.min
+//= require reader
+//= require app.v1.js
+//= require app.plugin
 //= require turbolinks
-//= require_tree .

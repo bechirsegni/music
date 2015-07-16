@@ -1,0 +1,176 @@
+<section id="content">
+  <section class="vbox" id="bjax-el">
+    <section class="scrollable wrapper-lg">
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="panel wrapper-lg">
+            <div class="row">
+              <div class="col-sm-5">
+                <%=image_tag @song.image.url.to_s,class:'img-full m-b'%>
+              </div>
+              <div class="col-sm-7">
+                <h2 class="m-t-none text-black"><%=@song.title%></h2>
+                <div class="clearfix m-b-lg">
+                  <a href="#" class="thumb-sm pull-left m-r">
+                    <img src="images/a0.png" class="img-circle">
+                  </a>
+                  <div class="clear">
+                    <a href="#" class="text-info"><%=@song.user.name%></a>
+                    <small class="block text-muted">2,415 followers / 225 following</small>
+                  </div>
+                </div>
+                <div class="m-b-lg">
+                  <a href="<%=@song.mp3%>" class="btn btn-info">Play</a>
+                  <a href="#" class="btn btn-default"><%= @song.scomments.count%> Comments</a>
+                </div>
+                <div> Tags:
+                  <a href="#" class="badge bg-light">Musik</a>
+                  <a href="#" class="badge bg-light">Pashion</a>
+                </div>
+              </div>
+            </div>
+            <div class="m-t">
+              <p><%=@song.description%></p>
+            </div>
+            <h4 class="m-t-lg m-b">Play List</h4>
+            <ul class="list-group list-group-lg">
+              <li class="list-group-item">
+                <div class="pull-right m-l">
+                  <a href="#" class="m-r-sm">
+                    <i class="icon-cloud-download"></i>
+                  </a>
+                  <a href="#" class="m-r-sm">
+                    <i class="icon-plus"></i>
+                  </a>
+                  <a href="#">
+                    <i class="icon-close"></i>
+                  </a>
+                </div>
+                <a href="#" class="jp-play-me m-r-sm pull-left">
+                  <i class="icon-control-play text"></i>
+                  <i class="icon-control-pause text-active"></i>
+                </a>
+                <div class="clear text-ellipsis">
+                  <span>E.T.M</span>
+                  <span class="text-muted"> -- 04:35</span>
+                </div>
+              </li>
+            </ul>
+            <%= render 'scomments/scomments'%>
+            <%= render'scomments/form'%>
+          </div>
+          <div class="col-sm-4">
+            <div class="panel panel-default">
+              <div class="panel-heading">Suggestions</div>
+              <div class="panel-body">
+                <article class="media">
+                  <a href="#" class="pull-left thumb-md m-t-xs">
+                    <img src="images/m18.jpg">
+                  </a>
+                  <div class="media-body">
+                    <a href="#" class="font-semibold">Bootstrap 3: What you need to know</a>
+                    <div class="text-xs block m-t-xs">
+                      <a href="#">Travel</a> 2 minutes ago
+                    </div>
+                  </div>
+                </article>
+                <article class="media">
+                  <a href="#" class="pull-left thumb-md m-t-xs">
+                    <img src="images/m19.jpg">
+                  </a>
+                  <div class="media-body">
+                    <a href="#" class="font-semibold">Lorem ipsum dolor sit amet it.</a>
+                    <div class="text-xs block m-t-xs">
+                      <a href="#">Design</a> 2 hours ago
+                    </div>
+                  </div>
+                </article>
+                <article class="media">
+                  <a href="#" class="pull-left thumb-md m-t-xs">
+                    <img src="images/m20.jpg">
+                  </a>
+                  <div class="media-body">
+                    <a href="#" class="font-semibold">Sed diam nonummy tincidunt ut laoreet</a>
+                    <div class="text-xs block m-t-xs">
+                      <a href="#">MFC</a> 1 week ago
+                    </div>
+                  </div>
+                </article>
+                <article class="media">
+                  <a href="#" class="pull-left thumb-md m-t-xs">
+                    <img src="images/m21.jpg">
+                  </a>
+                  <div class="media-body">
+                    <a href="#" class="font-semibold">Lonummy nibh euismod sed laoreet</a>
+                    <div class="text-xs block m-t-xs">
+                      <a href="#">MFC</a> 1 week ago
+                    </div>
+                  </div>
+                </article>
+                <article class="media">
+                  <a href="#" class="pull-left thumb-md m-t-xs">
+                    <img src="images/m22.jpg">
+                  </a>
+                  <div class="media-body">
+                    <a href="#" class="font-semibold">Mibh euismod tincidunt ut laoreet</a>
+                    <div class="text-xs block m-t-xs">
+                      <a href="#">MFC</a> 1 week ago
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</section>
+
+<div id="container" class="disabled">
+
+  <div id="cover-art">
+    <div id="cover-art-big"></div>
+    <img id="cover-art-small" alt="cover-art-small" src="assets/img/default.png">
+    <div class="instructions">Drop your audio files here.</div>
+  </div>
+
+  <div id="wave"></div>
+
+  <div id="control-bar">
+
+    <div class="player-control">
+      <div id="previous-button" title="Previous"><i class="fa fa-fast-backward"></i></div>
+      <div id="play-button" title="Play"><i class="fa fa-play"></i></div>
+      <div id="pause-button" title="Pause"><i class="fa fa-pause"></i></div>
+      <div id="stop-button" title="Stop"><i class="fa fa-stop"></i></div>
+      <div id="next-button" title="Next"><i class="fa fa-fast-forward"></i></div>
+      <div id="shuffle-button" title="Shuffle Off"><i class="fa fa-random"></i></div>
+      <div id="repeat-button" title="Repeat Off"><i class="fa fa-refresh"><span>1</span></i></div>
+    </div>
+
+    <div id="playlist">
+
+      <div id="track-details" title="Show playlist">
+        <i class="fa fa-sort"></i>
+        <p id="track-desc">There are no tracks loaded in the player.</p>
+        <p id="track-time">
+          <span id="current">-</span> / <span id="total">-</span>
+        </p>
+      </div>
+
+      <div id="expand-bar" class="hidden">
+
+        <form>
+          <label for="searchBox">Search</label><div><input id="searchBox" type="search" name="search"></div>
+        </form>
+        <ul id="list"></ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="drop-zone" class="hidden">Drag &amp; Drop Files Here</div>
+
+</div>

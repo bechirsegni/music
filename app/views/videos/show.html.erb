@@ -1,0 +1,34 @@
+    <section id="content">
+      <section class="vbox">
+        <section class="scrollable wrapper-lg">
+          <div class="row">
+            <div class="col-sm-8">
+              <div class="panel">
+
+                <!-- video player -->
+                <%= render 'videos/iframe'%>
+                <!-- / video player -->
+                <div class="wrapper-lg">
+                  <h2 class="m-t-none text-black"><%= @video.title %></h2>
+                  <div class="post-sum">
+                  <p><%= @video.description %></p>
+                  </div>
+                  <div class="line b-b"></div>
+                  <div class="text-muted">
+                    <i class="fa fa-user icon-muted"></i> by
+                    <a href="#" class="m-r-sm"><%=@video.user.name%></a>
+                    <i class="fa fa-clock-o icon-muted"></i> <%="#{time_ago_in_words(@video.created_at)} ago"%>
+                    <a href="#" class="m-l-sm">
+                      <i class="fa fa-comment-o icon-muted"></i> <%= @video.comments.count %> Comments
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <%= render 'comments/comments'%>
+              <%= render'comments/form'%>
+                </div>
+              </div>
+              </section>
+          </section>
+      <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+    </section>

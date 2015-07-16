@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<%= ie_conditional_tag :html, class:'app' %>
+<head>
+  <meta charset="utf-8" />
+  <title>Music</title>
+  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <%= stylesheet_link_tag  'users', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="bg-info" >
+      <%= yield %>
+<%= javascript_include_tag 'users', 'data-turbolinks-track' => true %>
+</body>
+</html>
